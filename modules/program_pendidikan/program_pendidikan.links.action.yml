@@ -1,0 +1,5 @@
+entity.program_pendidikan.add_form:
+  route_name: entity.program_pendidikan.add_form
+  title: 'Add Program pendidikan'
+  appears_on:
+    - entity.program_pendidikan.collection

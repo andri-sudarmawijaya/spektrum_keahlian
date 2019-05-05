@@ -1,0 +1,14 @@
+{
+  "name": "drupal/kompetensi_keahlian",
+  "type": "drupal-module",
+  "description": "Pengelolaan kompetensi keahlian untuk spektrum keahlian",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/kompetensi_keahlian",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/kompetensi_keahlian",
+    "source": "http://cgit.drupalcode.org/kompetensi_keahlian"
+  },
+  "require": { }
+}

@@ -1,0 +1,14 @@
+
+# Kompetensi keahlian menu items definition
+entity.kompetensi_keahlian.collection:
+  title: 'Kompetensi keahlian list'
+  route_name: entity.kompetensi_keahlian.collection
+  description: 'List Kompetensi keahlian entities'
+  parent: system.admin_structure
+  weight: 100
+
+kompetensi_keahlian.admin.structure.settings:
+  title: 'Kompetensi keahlian settings'
+  description: 'Configure Kompetensi keahlian entities'
+  route_name: kompetensi_keahlian.settings
+  parent: system.admin_structure

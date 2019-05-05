@@ -1,0 +1,14 @@
+{
+  "name": "drupal/program_keahlian",
+  "type": "drupal-module",
+  "description": "Pengelolaan program keahlian untuk spektrum keahlian",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/program_keahlian",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/program_keahlian",
+    "source": "http://cgit.drupalcode.org/program_keahlian"
+  },
+  "require": { }
+}

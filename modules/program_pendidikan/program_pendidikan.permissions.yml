@@ -1,0 +1,19 @@
+add program pendidikan entities:
+  title: 'Create new Program pendidikan entities'
+
+administer program pendidikan entities:
+  title: 'Administer Program pendidikan entities'
+  description: 'Allow to access the administration form to configure Program pendidikan entities.'
+  restrict access: true
+
+delete program pendidikan entities:
+  title: 'Delete Program pendidikan entities'
+
+edit program pendidikan entities:
+  title: 'Edit Program pendidikan entities'
+
+view published program pendidikan entities:
+  title: 'View published Program pendidikan entities'
+
+view unpublished program pendidikan entities:
+  title: 'View unpublished Program pendidikan entities'

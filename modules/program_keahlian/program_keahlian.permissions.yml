@@ -1,0 +1,19 @@
+add program keahlian entities:
+  title: 'Create new Program keahlian entities'
+
+administer program keahlian entities:
+  title: 'Administer Program keahlian entities'
+  description: 'Allow to access the administration form to configure Program keahlian entities.'
+  restrict access: true
+
+delete program keahlian entities:
+  title: 'Delete Program keahlian entities'
+
+edit program keahlian entities:
+  title: 'Edit Program keahlian entities'
+
+view published program keahlian entities:
+  title: 'View published Program keahlian entities'
+
+view unpublished program keahlian entities:
+  title: 'View unpublished Program keahlian entities'

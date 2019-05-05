@@ -1,0 +1,7 @@
+name: 'Program Pendidikan'
+type: module
+description: 'Pengelolaan progra pendidikan'
+core: 8.x
+package: 'PPDB'
+dependencies:
+  - spektrum_keahlian

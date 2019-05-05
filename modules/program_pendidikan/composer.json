@@ -1,0 +1,14 @@
+{
+  "name": "drupal/program_pendidikan",
+  "type": "drupal-module",
+  "description": "Pengelolaan progra pendidikan",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/program_pendidikan",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/program_pendidikan",
+    "source": "http://cgit.drupalcode.org/program_pendidikan"
+  },
+  "require": { }
+}

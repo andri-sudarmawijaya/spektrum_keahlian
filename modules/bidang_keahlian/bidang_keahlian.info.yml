@@ -1,0 +1,7 @@
+name: 'Bidang Keahlian'
+type: module
+description: 'Pengelolaan bidang keahlian untuk spektrum keahlian'
+core: 8.x
+package: 'PPDB'
+dependencies:
+  - spektrum_keahlian

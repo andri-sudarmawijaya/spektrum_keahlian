@@ -1,0 +1,22 @@
+# Kompetensi keahlian routing definition
+kompetensi_keahlian.settings_tab:
+  route_name: kompetensi_keahlian.settings
+  title: 'Settings'
+  base_route: kompetensi_keahlian.settings
+
+entity.kompetensi_keahlian.canonical:
+  route_name: entity.kompetensi_keahlian.canonical
+  base_route: entity.kompetensi_keahlian.canonical
+  title: 'View'
+
+entity.kompetensi_keahlian.edit_form:
+  route_name: entity.kompetensi_keahlian.edit_form
+  base_route: entity.kompetensi_keahlian.canonical
+  title: 'Edit'
+
+entity.kompetensi_keahlian.delete_form:
+  route_name:  entity.kompetensi_keahlian.delete_form
+  base_route:  entity.kompetensi_keahlian.canonical
+  title: Delete
+  weight: 10
+

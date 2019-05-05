@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains bidang_keahlian.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bidang_keahlian_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the bidang_keahlian module.
+    case 'help.page.bidang_keahlian':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Pengelolaan bidang keahlian untuk spektrum keahlian') . '</p>';
+      return $output;
+
+    default:
+  }
+}

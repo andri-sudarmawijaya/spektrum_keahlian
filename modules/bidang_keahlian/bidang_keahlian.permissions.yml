@@ -1,0 +1,19 @@
+add bidang keahlian entities:
+  title: 'Create new Bidang keahlian entities'
+
+administer bidang keahlian entities:
+  title: 'Administer Bidang keahlian entities'
+  description: 'Allow to access the administration form to configure Bidang keahlian entities.'
+  restrict access: true
+
+delete bidang keahlian entities:
+  title: 'Delete Bidang keahlian entities'
+
+edit bidang keahlian entities:
+  title: 'Edit Bidang keahlian entities'
+
+view published bidang keahlian entities:
+  title: 'View published Bidang keahlian entities'
+
+view unpublished bidang keahlian entities:
+  title: 'View unpublished Bidang keahlian entities'

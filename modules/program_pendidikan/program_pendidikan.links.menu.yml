@@ -1,0 +1,14 @@
+
+# Program pendidikan menu items definition
+entity.program_pendidikan.collection:
+  title: 'Program pendidikan list'
+  route_name: entity.program_pendidikan.collection
+  description: 'List Program pendidikan entities'
+  parent: system.admin_structure
+  weight: 100
+
+program_pendidikan.admin.structure.settings:
+  title: 'Program pendidikan settings'
+  description: 'Configure Program pendidikan entities'
+  route_name: program_pendidikan.settings
+  parent: system.admin_structure

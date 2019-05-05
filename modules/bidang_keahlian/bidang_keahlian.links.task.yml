@@ -1,0 +1,22 @@
+# Bidang keahlian routing definition
+bidang_keahlian.settings_tab:
+  route_name: bidang_keahlian.settings
+  title: 'Settings'
+  base_route: bidang_keahlian.settings
+
+entity.bidang_keahlian.canonical:
+  route_name: entity.bidang_keahlian.canonical
+  base_route: entity.bidang_keahlian.canonical
+  title: 'View'
+
+entity.bidang_keahlian.edit_form:
+  route_name: entity.bidang_keahlian.edit_form
+  base_route: entity.bidang_keahlian.canonical
+  title: 'Edit'
+
+entity.bidang_keahlian.delete_form:
+  route_name:  entity.bidang_keahlian.delete_form
+  base_route:  entity.bidang_keahlian.canonical
+  title: Delete
+  weight: 10
+

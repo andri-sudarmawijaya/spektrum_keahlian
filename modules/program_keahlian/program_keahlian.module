@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains program_keahlian.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function program_keahlian_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the program_keahlian module.
+    case 'help.page.program_keahlian':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Pengelolaan program keahlian untuk spektrum keahlian') . '</p>';
+      return $output;
+
+    default:
+  }
+}

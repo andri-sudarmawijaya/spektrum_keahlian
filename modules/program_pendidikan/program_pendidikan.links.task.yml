@@ -1,0 +1,22 @@
+# Program pendidikan routing definition
+program_pendidikan.settings_tab:
+  route_name: program_pendidikan.settings
+  title: 'Settings'
+  base_route: program_pendidikan.settings
+
+entity.program_pendidikan.canonical:
+  route_name: entity.program_pendidikan.canonical
+  base_route: entity.program_pendidikan.canonical
+  title: 'View'
+
+entity.program_pendidikan.edit_form:
+  route_name: entity.program_pendidikan.edit_form
+  base_route: entity.program_pendidikan.canonical
+  title: 'Edit'
+
+entity.program_pendidikan.delete_form:
+  route_name:  entity.program_pendidikan.delete_form
+  base_route:  entity.program_pendidikan.canonical
+  title: Delete
+  weight: 10
+

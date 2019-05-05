@@ -1,0 +1,19 @@
+add kompetensi keahlian entities:
+  title: 'Create new Kompetensi keahlian entities'
+
+administer kompetensi keahlian entities:
+  title: 'Administer Kompetensi keahlian entities'
+  description: 'Allow to access the administration form to configure Kompetensi keahlian entities.'
+  restrict access: true
+
+delete kompetensi keahlian entities:
+  title: 'Delete Kompetensi keahlian entities'
+
+edit kompetensi keahlian entities:
+  title: 'Edit Kompetensi keahlian entities'
+
+view published kompetensi keahlian entities:
+  title: 'View published Kompetensi keahlian entities'
+
+view unpublished kompetensi keahlian entities:
+  title: 'View unpublished Kompetensi keahlian entities'

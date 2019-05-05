@@ -1,0 +1,14 @@
+{
+  "name": "drupal/bidang_keahlian",
+  "type": "drupal-module",
+  "description": "Pengelolaan bidang keahlian untuk spektrum keahlian",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/bidang_keahlian",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bidang_keahlian",
+    "source": "http://cgit.drupalcode.org/bidang_keahlian"
+  },
+  "require": { }
+}

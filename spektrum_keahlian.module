@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains spektrum_keahlian.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function spektrum_keahlian_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the spektrum_keahlian module.
+    case 'help.page.spektrum_keahlian':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Spektrum keahlian SMK / MAK') . '</p>';
+      return $output;
+
+    default:
+  }
+}

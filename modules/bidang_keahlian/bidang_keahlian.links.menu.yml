@@ -1,0 +1,14 @@
+
+# Bidang keahlian menu items definition
+entity.bidang_keahlian.collection:
+  title: 'Bidang keahlian list'
+  route_name: entity.bidang_keahlian.collection
+  description: 'List Bidang keahlian entities'
+  parent: system.admin_structure
+  weight: 100
+
+bidang_keahlian.admin.structure.settings:
+  title: 'Bidang keahlian settings'
+  description: 'Configure Bidang keahlian entities'
+  route_name: bidang_keahlian.settings
+  parent: system.admin_structure

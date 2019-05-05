@@ -1,0 +1,6 @@
+entity.kompetensi_keahlian.add_form:
+  route_name: entity.kompetensi_keahlian.add_form
+  title: 'Add Kompetensi keahlian'
+  appears_on:
+    - entity.kompetensi_keahlian.collection
+    - entity.kompetensi_keahlian.canonical

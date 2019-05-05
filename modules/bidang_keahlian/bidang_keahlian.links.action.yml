@@ -1,0 +1,5 @@
+entity.bidang_keahlian.add_form:
+  route_name: entity.bidang_keahlian.add_form
+  title: 'Add Bidang keahlian'
+  appears_on:
+    - entity.bidang_keahlian.collection

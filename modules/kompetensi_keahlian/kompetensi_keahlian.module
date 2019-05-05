@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains kompetensi_keahlian.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function kompetensi_keahlian_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the kompetensi_keahlian module.
+    case 'help.page.kompetensi_keahlian':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Pengelolaan kompetensi keahlian untuk spektrum keahlian') . '</p>';
+      return $output;
+
+    default:
+  }
+}

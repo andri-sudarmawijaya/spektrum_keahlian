@@ -1,0 +1,14 @@
+
+# Program keahlian menu items definition
+entity.program_keahlian.collection:
+  title: 'Program keahlian list'
+  route_name: entity.program_keahlian.collection
+  description: 'List Program keahlian entities'
+  parent: system.admin_structure
+  weight: 100
+
+program_keahlian.admin.structure.settings:
+  title: 'Program keahlian settings'
+  description: 'Configure Program keahlian entities'
+  route_name: program_keahlian.settings
+  parent: system.admin_structure
