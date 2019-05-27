@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Creates some default entries on this module custom table.
+ *
+ * @see hook_install()
+ *
+ * @ingroup simulasi
+ */
+use Drupal\program_pendidikan\Entity\ProgramPendidikan;
+
+function program_pendidikan_install() {
+  // Insert some example data into our schema.
+
+  $entries = [
+	['id' => '10','name' => '3 Tahun'],
+	['id' => '20','name' => '4 Tahun'],
+  ];
+  
+  foreach ($entries as $entry) {
+	$entry['user_id'] = '1'; 
+    $program_pendidikan = ProgramPendidikan::create($entry);
+	
+	$program_pendidikan->save();
+  }
+}

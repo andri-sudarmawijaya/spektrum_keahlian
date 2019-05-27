@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Creates some default entries on this module custom table.
+ *
+ * @see hook_install()
+ *
+ * @ingroup simulasi
+ */
+use Drupal\bidang_keahlian\Entity\BidangKeahlian;
+
+function bidang_keahlian_install() {
+  // Insert some example data into our schema.
+
+  $entries = [
+	['id' => '10','no' => '10','name' => 'Teknologi dan Rekayasa'],
+	['id' => '20','no' => '20','name' => 'Energi dan Pertambangan'],
+	['id' => '30','no' => '30','name' => 'Teknologi Informasi dan Komunikasi'],
+	['id' => '40','no' => '40','name' => 'Kesehatan dan Pekerjaan Sosial'],
+	['id' => '50','no' => '50','name' => 'Agribisnis dan Agroteknologi'],
+	['id' => '60','no' => '60','name' => 'Kemaritiman'],
+	['id' => '70','no' => '70','name' => 'Bisnis dan Manajemen'],
+	['id' => '80','no' => '80','name' => 'Pariwisata'],
+	['id' => '90','no' => '90','name' => 'Seni dan Industri Kreatif'],
+	['id' => '99','no' => '99','name' => 'SMA'],
+  ];
+  
+  foreach ($entries as $entry) {
+	$entry['user_id'] = '1'; 
+    $bidang_keahlian = BidangKeahlian::create($entry);
+	
+	$bidang_keahlian->save();
+  }
+}

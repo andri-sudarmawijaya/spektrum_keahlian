@@ -1,0 +1,219 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Creates some default entries on this module custom table.
+ *
+ * @see hook_install()
+ *
+ * @ingroup simulasi
+ */
+use Drupal\kompetensi_keahlian\Entity\KompetensiKeahlian;
+
+function kompetensi_keahlian_install() {
+  // Insert some example data into our schema.
+
+  $entries = [
+	['id' => '111','no' => '1.1.1', 'jenis_sekolah' => '10', 'name' => 'Konstruksi Gedung Sanitasi dan Perawatan', 'program_keahlian' => '101', 'code' => '111', 'program_pendidikan' => '20'],
+	['id' => '112','no' => '1.1.2', 'jenis_sekolah' => '10', 'name' => 'Konstruksi Jalan Irigasi dan Jembatan', 'program_keahlian' => '101', 'code' => '112', 'program_pendidikan' => '20'],
+	['id' => '113','no' => '1.1.3', 'jenis_sekolah' => '10', 'name' => 'Bisnis Konstruksi dan Properti', 'program_keahlian' => '101', 'code' => '113', 'program_pendidikan' => '10'],
+	['id' => '1004','no' => '1.1.4', 'jenis_sekolah' => '10', 'name' => 'desain Pemodelan dan Informasi Bangunan', 'program_keahlian' => '101', 'code' => '1004', 'program_pendidikan' => '10'],
+
+	['id' => '1005','no' => '1.2.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Geomatika', 'program_keahlian' => '102', 'code' => '1005', 'program_pendidikan' => '10'],
+	['id' => '1006','no' => '1.2.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Geospasial', 'program_keahlian' => '102', 'code' => '1006', 'program_pendidikan' => '20'],
+	
+	['id' => '1007','no' => '1.3.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Pembangkit Tenaga Listrik', 'program_keahlian' => '103', 'code' => '1007', 'program_pendidikan' => '10'],
+	['id' => '1008','no' => '1.3.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Jaringan Tenaga Listrik', 'program_keahlian' => '103', 'code' => '1008', 'program_pendidikan' => '10'],
+	['id' => '1009','no' => '1.3.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Instalasi Tenaga Listrik', 'program_keahlian' => '103', 'code' => '1009', 'program_pendidikan' => '10'],
+	['id' => '1010','no' => '1.3.4', 'jenis_sekolah' => '10', 'name' => 'Teknik Otomasi Industri', 'program_keahlian' => '103', 'code' => '1010', 'program_pendidikan' => '20'],
+	['id' => '1011','no' => '1.3.5', 'jenis_sekolah' => '10', 'name' => 'Teknik Pendinginan dan Tata Udara', 'program_keahlian' => '103', 'code' => '1011', 'program_pendidikan' => '10'],
+	['id' => '1012','no' => '1.3.6', 'jenis_sekolah' => '10', 'name' => 'Teknik Tenaga Listrik', 'program_keahlian' => '103', 'code' => '1012', 'program_pendidikan' => '20'],
+
+	['id' => '1013','no' => '1.4.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Permesinan', 'program_keahlian' => '104', 'code' => '1013', 'program_pendidikan' => '10'],
+	['id' => '1014','no' => '1.4.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Pengelasan', 'program_keahlian' => '104', 'code' => '1014', 'program_pendidikan' => '10'],
+	['id' => '1015','no' => '1.4.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Pengecoran Logam', 'program_keahlian' => '104', 'code' => '1015', 'program_pendidikan' => '10'],
+	['id' => '1016','no' => '1.4.4', 'jenis_sekolah' => '10', 'name' => 'Teknik Mekanik Industri', 'program_keahlian' => '104', 'code' => '1016', 'program_pendidikan' => '10'],
+	['id' => '1017','no' => '1.4.5', 'jenis_sekolah' => '10', 'name' => 'Teknik Perancangan dan Gambar Mesin', 'program_keahlian' => '104', 'code' => '1017', 'program_pendidikan' => '10'],
+	['id' => '1018','no' => '1.4.6', 'jenis_sekolah' => '10', 'name' => 'Teknik Fabrikasi Logam dan Manufaktur', 'program_keahlian' => '104', 'code' => '1018', 'program_pendidikan' => '10'],
+
+	['id' => '1019','no' => '1.5.1', 'jenis_sekolah' => '10', 'name' => 'Airframe Power Plant', 'program_keahlian' => '105', 'code' => '1019', 'program_pendidikan' => '10'],
+	['id' => '1020','no' => '1.5.2', 'jenis_sekolah' => '10', 'name' => 'Aircraft Machining', 'program_keahlian' => '105', 'code' => '1020', 'program_pendidikan' => '10'],
+	['id' => '1021','no' => '1.5.3', 'jenis_sekolah' => '10', 'name' => 'Aircraft Sheet Metal Forming', 'program_keahlian' => '105', 'code' => '1021', 'program_pendidikan' => '10'],
+	['id' => '1022','no' => '1.5.4', 'jenis_sekolah' => '10', 'name' => 'Aircraft Mechanic', 'program_keahlian' => '105', 'code' => '1022', 'program_pendidikan' => '10'],
+	['id' => '1023','no' => '1.5.5', 'jenis_sekolah' => '10', 'name' => 'Aircraft Electicity', 'program_keahlian' => '105', 'code' => '1023', 'program_pendidikan' => '10'],
+	['id' => '1024','no' => '1.5.6', 'jenis_sekolah' => '10', 'name' => 'Aviation Electronics', 'program_keahlian' => '105', 'code' => '1024', 'program_pendidikan' => '10'],
+	['id' => '1025','no' => '1.5.7', 'jenis_sekolah' => '10', 'name' => 'Electrical Avionics', 'program_keahlian' => '105', 'code' => '1025', 'program_pendidikan' => '10'],
+	
+	['id' => '1026','no' => '1.6.1', 'jenis_sekolah' => '10', 'name' => 'Desain Grafika', 'program_keahlian' => '106', 'code' => '1026', 'program_pendidikan' => '10'],
+	['id' => '1027','no' => '1.6.2', 'jenis_sekolah' => '10', 'name' => 'Produksi Grafika', 'program_keahlian' => '106', 'code' => '1027', 'program_pendidikan' => '10'],
+
+	['id' => '1028','no' => '1.7.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Instrumentasi Logam', 'program_keahlian' => '107', 'code' => '1028', 'program_pendidikan' => '10'],
+	['id' => '1029','no' => '1.7.2', 'jenis_sekolah' => '10', 'name' => 'Instrumentasi dan Otomatisasi Proses', 'program_keahlian' => '107', 'code' => '1029', 'program_pendidikan' => '10'],
+
+	['id' => '1030','no' => '1.8.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Pengendalian Produksi', 'program_keahlian' => '108', 'code' => '1030', 'program_pendidikan' => '10'],
+	['id' => '1031','no' => '1.8.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Logistik', 'program_keahlian' => '108', 'code' => '1031', 'program_pendidikan' => '10'],
+
+	['id' => '1032','no' => '1.9.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Pemintalan Serat Buatan', 'program_keahlian' => '109', 'code' => '1032', 'program_pendidikan' => '10'],
+	['id' => '1033','no' => '1.9.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Pembuatan Benang', 'program_keahlian' => '109', 'code' => '1033', 'program_pendidikan' => '10'],
+	['id' => '1034','no' => '1.9.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Pembuatan Kain', 'program_keahlian' => '109', 'code' => '1034', 'program_pendidikan' => '10'],
+	['id' => '1035','no' => '1.9.4', 'jenis_sekolah' => '10', 'name' => 'Teknik Penyempurnaan Tekstil', 'program_keahlian' => '109', 'code' => '1035', 'program_pendidikan' => '10'],
+
+	['id' => '1036','no' => '1.10.1', 'jenis_sekolah' => '10', 'name' => 'Analisis Pengujian Laboratorium', 'program_keahlian' => '110', 'code' => '1036', 'program_pendidikan' => '10'],
+	['id' => '1037','no' => '1.10.2', 'jenis_sekolah' => '10', 'name' => 'Kimia Industri', 'program_keahlian' => '110', 'code' => '1037', 'program_pendidikan' => '10'],
+	['id' => '1038','no' => '1.10.3', 'jenis_sekolah' => '10', 'name' => 'Kimia Analis', 'program_keahlian' => '110', 'code' => '1038', 'program_pendidikan' => '10'],
+	['id' => '1039','no' => '1.10.4', 'jenis_sekolah' => '10', 'name' => 'Kimia Tekstil', 'program_keahlian' => '110', 'code' => '1039', 'program_pendidikan' => '10'],
+
+	['id' => '1040','no' => '1.11.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Kendaraan Ringan Otomotif', 'program_keahlian' => '111', 'code' => '1036', 'program_pendidikan' => '10'],
+	['id' => '1041','no' => '1.11.2', 'jenis_sekolah' => '10', 'name' => 'Teknik dan Bisnis Sepeda Motor', 'program_keahlian' => '111', 'code' => '1041', 'program_pendidikan' => '10'],
+	['id' => '1042','no' => '1.11.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Alat Berat', 'program_keahlian' => '111', 'code' => '1042', 'program_pendidikan' => '10'],
+	['id' => '1043','no' => '1.11.4', 'jenis_sekolah' => '10', 'name' => 'Teknik Bodi Otomotif', 'program_keahlian' => '111', 'code' => '1043', 'program_pendidikan' => '10'],
+	['id' => '1044','no' => '1.11.5', 'jenis_sekolah' => '10', 'name' => 'Teknik Ototronik', 'program_keahlian' => '111', 'code' => '1044', 'program_pendidikan' => '10'],
+	['id' => '1045','no' => '1.11.6', 'jenis_sekolah' => '10', 'name' => 'Teknik dan Manajemen Perawatan Otomotif', 'program_keahlian' => '111', 'code' => '1045', 'program_pendidikan' => '10'],
+	['id' => '1046','no' => '1.11.7', 'jenis_sekolah' => '10', 'name' => 'Otomotif Daya dan Konversi Energi', 'program_keahlian' => '111', 'code' => '1046', 'program_pendidikan' => '10'],
+
+	['id' => '1047','no' => '1.12.1', 'jenis_sekolah' => '10', 'name' => 'Konstruksi Kapal Baja', 'program_keahlian' => '112', 'code' => '1047', 'program_pendidikan' => '10'],
+	['id' => '1048','no' => '1.12.2', 'jenis_sekolah' => '10', 'name' => 'Konstruksi Kapal Non Baja', 'program_keahlian' => '112', 'code' => '1048', 'program_pendidikan' => '10'],
+	['id' => '1049','no' => '1.12.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Pemesinan Kapal', 'program_keahlian' => '112', 'code' => '1049', 'program_pendidikan' => '10'],
+	['id' => '1050','no' => '1.12.4', 'jenis_sekolah' => '10', 'name' => 'Teknik Pengelasam Kapal', 'program_keahlian' => '112', 'code' => '1050', 'program_pendidikan' => '10'],
+	['id' => '1051','no' => '1.12.5', 'jenis_sekolah' => '10', 'name' => 'Teknik Kelistrikan Kapal', 'program_keahlian' => '112', 'code' => '1051', 'program_pendidikan' => '10'],
+	['id' => '1052','no' => '1.12.6', 'jenis_sekolah' => '10', 'name' => 'Desain dan Rancang Bangun Kapal', 'program_keahlian' => '112', 'code' => '1052', 'program_pendidikan' => '10'],
+	['id' => '1053','no' => '1.12.7', 'jenis_sekolah' => '10', 'name' => 'Interior Kapal', 'program_keahlian' => '112', 'code' => '1053', 'program_pendidikan' => '10'],
+
+	['id' => '1054','no' => '1.13.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Audio Video', 'program_keahlian' => '113', 'code' => '1054', 'program_pendidikan' => '10'],
+	['id' => '1055','no' => '1.13.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Elektronika Industri', 'program_keahlian' => '113', 'code' => '1055', 'program_pendidikan' => '10'],
+	['id' => '1056','no' => '1.13.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Mekanotrika', 'program_keahlian' => '113', 'code' => '1056', 'program_pendidikan' => '20'],
+	['id' => '1057','no' => '1.13.4', 'jenis_sekolah' => '10', 'name' => 'Teknik Elektronika Daya dan Komunikasi', 'program_keahlian' => '113', 'code' => '1057', 'program_pendidikan' => '20'],
+	['id' => '1058','no' => '1.13.5', 'jenis_sekolah' => '10', 'name' => 'Instrumentasi Medik', 'program_keahlian' => '113', 'code' => '1058', 'program_pendidikan' => '20'],
+
+	['id' => '1059','no' => '2.1.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Produksi Minyak dan Gas', 'program_keahlian' => '201', 'code' => '1059', 'program_pendidikan' => '10'],
+	['id' => '1060','no' => '2.1.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Pemboran Minyak dan Gas', 'program_keahlian' => '201', 'code' => '1060', 'program_pendidikan' => '10'],
+	['id' => '1061','no' => '2.1.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Pengolahan Minyak Gas dan Petrokimia', 'program_keahlian' => '201', 'code' => '1061', 'program_pendidikan' => '10'],
+
+	['id' => '1062','no' => '2.2.1', 'jenis_sekolah' => '10', 'name' => 'Geologi Pertambangan', 'program_keahlian' => '202', 'code' => '1062', 'program_pendidikan' => '20'],
+
+	['id' => '1063','no' => '2.3.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Energi Hodro, Surya dan Angin', 'program_keahlian' => '203', 'code' => '1063', 'program_pendidikan' => '10'],
+	['id' => '1064','no' => '2.3.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Energi Biomassa', 'program_keahlian' => '203', 'code' => '1064', 'program_pendidikan' => '10'],
+
+	['id' => '1065','no' => '3.1.1', 'jenis_sekolah' => '10', 'name' => 'Rekayasa Perangkat Lunak', 'program_keahlian' => '301', 'code' => '1065', 'program_pendidikan' => '10'],
+	['id' => '1066','no' => '3.1.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Komputer dan Jaringan', 'program_keahlian' => '301', 'code' => '1066', 'program_pendidikan' => '10'],
+	['id' => '1067','no' => '3.1.3', 'jenis_sekolah' => '10', 'name' => 'Multimedia', 'program_keahlian' => '301', 'code' => '1067', 'program_pendidikan' => '10'],
+	['id' => '1068','no' => '3.1.4', 'jenis_sekolah' => '10', 'name' => 'Sistem Informatika, Jaringan dan Aplikasi', 'program_keahlian' => '301', 'code' => '1068', 'program_pendidikan' => '20'],
+
+	['id' => '1069','no' => '3.2.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Transmisi Komunikasi', 'program_keahlian' => '302', 'code' => '1069', 'program_pendidikan' => '10'],
+	['id' => '1070','no' => '3.2.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Jaringan Akses Komunikasi', 'program_keahlian' => '302', 'code' => '1070', 'program_pendidikan' => '10'],
+
+	['id' => '1071','no' => '4.1.1', 'jenis_sekolah' => '10', 'name' => 'Asisten Keperawatan', 'program_keahlian' => '401', 'code' => '1071', 'program_pendidikan' => '10'],
+
+	['id' => '1072','no' => '4.2.1', 'jenis_sekolah' => '10', 'name' => 'Dental Asisten', 'program_keahlian' => '402', 'code' => '1072', 'program_pendidikan' => '10'],
+
+	['id' => '1073','no' => '4.3.1', 'jenis_sekolah' => '10', 'name' => 'Teknologi Laboratorium Medik', 'program_keahlian' => '403', 'code' => '1073', 'program_pendidikan' => '10'],
+
+	['id' => '1074','no' => '4.4.1', 'jenis_sekolah' => '10', 'name' => 'Farmasi Klinis dan Komunitas', 'program_keahlian' => '404', 'code' => '1074', 'program_pendidikan' => '10'],
+	['id' => '1075','no' => '4.4.2', 'jenis_sekolah' => '10', 'name' => 'Farmasi Industri', 'program_keahlian' => '404', 'code' => '1075', 'program_pendidikan' => '10'],
+
+	['id' => '1076','no' => '4.5.1', 'jenis_sekolah' => '10', 'name' => 'Social Care / Keperawatan Sosial', 'program_keahlian' => '405', 'code' => '1076', 'program_pendidikan' => '10'],
+	['id' => '1077','no' => '4.5.2', 'jenis_sekolah' => '10', 'name' => 'Caregiver', 'program_keahlian' => '405', 'code' => '1077', 'program_pendidikan' => '10'],
+
+	['id' => '1078','no' => '5.1.1', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Hortikultura', 'program_keahlian' => '501', 'code' => '1078', 'program_pendidikan' => '10'],
+	['id' => '1079','no' => '5.1.2', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Tanaman Perkebunan', 'program_keahlian' => '501', 'code' => '1079', 'program_pendidikan' => '10'],
+	['id' => '1080','no' => '5.1.3', 'jenis_sekolah' => '10', 'name' => 'Pemuliaan dan Pembenihan Tanaman', 'program_keahlian' => '501', 'code' => '1080', 'program_pendidikan' => '20'],
+	['id' => '1081','no' => '5.1.4', 'jenis_sekolah' => '10', 'name' => 'Lansekap dan Pertanaman', 'program_keahlian' => '501', 'code' => '1081', 'program_pendidikan' => '10'],
+	['id' => '1082','no' => '5.1.5', 'jenis_sekolah' => '10', 'name' => 'Produksi dan Pengelolaan Perkebunan', 'program_keahlian' => '501', 'code' => '1082', 'program_pendidikan' => '20'],
+	['id' => '1083','no' => '5.1.6', 'jenis_sekolah' => '10', 'name' => 'Agibisnis Organik Ekologi', 'program_keahlian' => '501', 'code' => '1083', 'program_pendidikan' => '20'],
+
+	['id' => '1084','no' => '5.2.1', 'jenis_sekolah' => '10', 'name' => 'Agibisnis Ternak Ruminasia', 'program_keahlian' => '502', 'code' => '1084', 'program_pendidikan' => '10'],
+	['id' => '1085','no' => '5.2.2', 'jenis_sekolah' => '10', 'name' => 'Agibisnis Ternak Unggas', 'program_keahlian' => '502', 'code' => '1085', 'program_pendidikan' => '10'],
+	['id' => '1086','no' => '5.2.3', 'jenis_sekolah' => '10', 'name' => 'Industri Peternakan', 'program_keahlian' => '502', 'code' => '1086', 'program_pendidikan' => '20'],
+
+	['id' => '1087','no' => '5.3.1', 'jenis_sekolah' => '10', 'name' => 'Industri Peternakan', 'program_keahlian' => '503', 'code' => '1087', 'program_pendidikan' => '10'],
+	['id' => '1088','no' => '5.3.2', 'jenis_sekolah' => '10', 'name' => 'Kesehatan dan Reproduksi Hewan', 'program_keahlian' => '503', 'code' => '1088', 'program_pendidikan' => '20'],
+
+	['id' => '1089','no' => '5.4.1', 'jenis_sekolah' => '10', 'name' => 'Agrobisnis Pengolahan Hasil Pertanian', 'program_keahlian' => '504', 'code' => '1089', 'program_pendidikan' => '10'],
+	['id' => '1090','no' => '5.4.2', 'jenis_sekolah' => '10', 'name' => 'Pengawasan Mutu Hasil Pertanian', 'program_keahlian' => '504', 'code' => '1090', 'program_pendidikan' => '10'],
+	['id' => '1091','no' => '5.4.3', 'jenis_sekolah' => '10', 'name' => 'Agroindustri', 'program_keahlian' => '504', 'code' => '1091', 'program_pendidikan' => '10'],
+
+	['id' => '1092','no' => '5.5.1', 'jenis_sekolah' => '10', 'name' => 'Alat Mesin Pertanian', 'program_keahlian' => '505', 'code' => '1092', 'program_pendidikan' => '10'],
+	['id' => '1093','no' => '5.5.2', 'jenis_sekolah' => '10', 'name' => 'Otomatisasi Pertanian', 'program_keahlian' => '505', 'code' => '1093', 'program_pendidikan' => '20'],
+
+	['id' => '1094','no' => '5.6.1', 'jenis_sekolah' => '10', 'name' => 'Teknik Inventarisasi dan Pemetaan Hutan', 'program_keahlian' => '506', 'code' => '1094', 'program_pendidikan' => '10'],
+	['id' => '1095','no' => '5.6.2', 'jenis_sekolah' => '10', 'name' => 'Teknik Konservasi Sumber Daya Hutan', 'program_keahlian' => '506', 'code' => '1095', 'program_pendidikan' => '10'],
+ 	['id' => '1096','no' => '5.6.3', 'jenis_sekolah' => '10', 'name' => 'Teknik Rehabilitasi dan Reklamasi Hutan', 'program_keahlian' => '506', 'code' => '1096', 'program_pendidikan' => '10'],
+ 	['id' => '1097','no' => '5.6.4', 'jenis_sekolah' => '10', 'name' => 'Teknologi Produksi Hutan', 'program_keahlian' => '506', 'code' => '1097', 'program_pendidikan' => '10'],
+
+ 	['id' => '1098','no' => '6.1.1', 'jenis_sekolah' => '10', 'name' => 'Nautika Kapal Penangkap Ikan', 'program_keahlian' => '601', 'code' => '1098', 'program_pendidikan' => '10'],
+ 	['id' => '1099','no' => '6.1.2', 'jenis_sekolah' => '10', 'name' => 'Teknika Kapal Penangkap Ikan', 'program_keahlian' => '601', 'code' => '1099', 'program_pendidikan' => '10'],
+
+ 	['id' => '1100','no' => '6.2.1', 'jenis_sekolah' => '10', 'name' => 'Nautika Kapal Niaga', 'program_keahlian' => '602', 'code' => '1100', 'program_pendidikan' => '10'],
+ 	['id' => '1101','no' => '6.2.2', 'jenis_sekolah' => '10', 'name' => 'Teknika Kapal Niaga', 'program_keahlian' => '602', 'code' => '1101', 'program_pendidikan' => '10'],
+
+ 	['id' => '1102','no' => '6.3.1', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Perikanan Air Tawar', 'program_keahlian' => '603', 'code' => '1102', 'program_pendidikan' => '10'],
+ 	['id' => '1103','no' => '6.3.2', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Perikanan Air Payau', 'program_keahlian' => '603', 'code' => '1103', 'program_pendidikan' => '10'],
+ 	['id' => '1104','no' => '6.3.3', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Ikan Hias', 'program_keahlian' => '603', 'code' => '1104', 'program_pendidikan' => '10'],
+ 	['id' => '1105','no' => '6.3.3', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Rumput Laut', 'program_keahlian' => '603', 'code' => '1105', 'program_pendidikan' => '10'],
+ 	['id' => '1106','no' => '6.3.4', 'jenis_sekolah' => '10', 'name' => 'Industri Perikanan Laut', 'program_keahlian' => '603', 'code' => '1106', 'program_pendidikan' => '20'],
+
+ 	['id' => '1107','no' => '6.4.1', 'jenis_sekolah' => '10', 'name' => 'Agribisnis Pengolahan Perikanan', 'program_keahlian' => '604', 'code' => '1107', 'program_pendidikan' => '10'],
+
+ 	['id' => '1108','no' => '7.1.1', 'jenis_sekolah' => '10', 'name' => 'Bisnis Daring dan Pemasaran', 'program_keahlian' => '701', 'code' => '1108', 'program_pendidikan' => '10'],
+ 	['id' => '1109','no' => '7.1.2', 'jenis_sekolah' => '10', 'name' => 'Retail', 'program_keahlian' => '701', 'code' => '1109', 'program_pendidikan' => '10'],
+
+ 	['id' => '1110','no' => '7.2.1', 'jenis_sekolah' => '10', 'name' => 'Otomatisasi dan Tata Kelola Perkantoran', 'program_keahlian' => '702', 'code' => '1110', 'program_pendidikan' => '10'],
+
+ 	['id' => '1111','no' => '7.3.1', 'jenis_sekolah' => '10', 'name' => 'Akuntansi dan Keuangan Lembaga', 'program_keahlian' => '703', 'code' => '1111', 'program_pendidikan' => '10'],
+ 	['id' => '1112','no' => '7.3.2', 'jenis_sekolah' => '10', 'name' => 'Perbankan dan Keuangan Mikro', 'program_keahlian' => '703', 'code' => '1112', 'program_pendidikan' => '10'],
+ 	['id' => '1113','no' => '7.3.3', 'jenis_sekolah' => '10', 'name' => 'Perbankan Syariah', 'program_keahlian' => '703', 'code' => '1113', 'program_pendidikan' => '10'],
+
+ 	['id' => '1114','no' => '7.4.1', 'jenis_sekolah' => '10', 'name' => 'Manajemen Logistik', 'program_keahlian' => '703', 'code' => '1114', 'program_pendidikan' => '10'],
+
+ 	['id' => '1115','no' => '8.1.1', 'jenis_sekolah' => '10', 'name' => 'Usaha Perjalanan Wisata', 'program_keahlian' => '801', 'code' => '1115', 'program_pendidikan' => '10'],
+ 	['id' => '1116','no' => '8.1.2', 'jenis_sekolah' => '10', 'name' => 'Perhotelan', 'program_keahlian' => '801', 'code' => '1116', 'program_pendidikan' => '10'],
+ 	['id' => '1117','no' => '8.1.3', 'jenis_sekolah' => '10', 'name' => 'Wisata Bahari dan Ekowisata', 'program_keahlian' => '801', 'code' => '1117', 'program_pendidikan' => '10'],
+ 	['id' => '1118','no' => '8.1.4', 'jenis_sekolah' => '10', 'name' => 'Hotel dan Restoran', 'program_keahlian' => '801', 'code' => '1118', 'program_pendidikan' => '10'],
+
+ 	['id' => '1119','no' => '8.2.1', 'jenis_sekolah' => '10', 'name' => 'Tata Boga', 'program_keahlian' => '802', 'code' => '1119', 'program_pendidikan' => '10'],
+ 	
+	['id' => '1120','no' => '8.3.1', 'jenis_sekolah' => '10', 'name' => 'Tata Kecantikan Kuit dan Rambut', 'program_keahlian' => '803', 'code' => '1120', 'program_pendidikan' => '10'],
+ 	['id' => '1121','no' => '8.3.2', 'jenis_sekolah' => '10', 'name' => 'Spa and Beauty Teraphy', 'program_keahlian' => '803', 'code' => '1121', 'program_pendidikan' => '10'],
+
+ 	['id' => '1122','no' => '8.4.1', 'jenis_sekolah' => '10', 'name' => 'Tata Busana', 'program_keahlian' => '804', 'code' => '1122', 'program_pendidikan' => '10'],
+ 	['id' => '1123','no' => '8.4.2', 'jenis_sekolah' => '10', 'name' => 'Desain Fesyen', 'program_keahlian' => '804', 'code' => '1123', 'program_pendidikan' => '10'],
+
+ 	['id' => '1124','no' => '9.1.1', 'jenis_sekolah' => '10', 'name' => 'Seni Lukis', 'program_keahlian' => '901', 'code' => '1124', 'program_pendidikan' => '10'],
+	['id' => '1125','no' => '9.1.2', 'jenis_sekolah' => '10', 'name' => 'Seni Patung', 'program_keahlian' => '901', 'code' => '1125', 'program_pendidikan' => '10'],
+	['id' => '1126','no' => '9.1.3', 'jenis_sekolah' => '10', 'name' => 'Desain Komunikasi Visual', 'program_keahlian' => '901', 'code' => '1126', 'program_pendidikan' => '10'],
+    ['id' => '1127','no' => '9.1.4', 'jenis_sekolah' => '10', 'name' => 'Desain Interior dan Teknik Furnitur', 'program_keahlian' => '901', 'code' => '1127', 'program_pendidikan' => '10'],
+    ['id' => '1128','no' => '9.1.5', 'jenis_sekolah' => '10', 'name' => 'Animasi', 'program_keahlian' => '901', 'code' => '1128', 'program_pendidikan' => '10'],
+
+    ['id' => '1129','no' => '9.2.1', 'jenis_sekolah' => '10', 'name' => 'Kriya Kreatif Batik dan Tekstil', 'program_keahlian' => '902', 'code' => '1129', 'program_pendidikan' => '10'],
+    ['id' => '1130','no' => '9.2.2', 'jenis_sekolah' => '10', 'name' => 'Kriya Kreatif Kulit dan Animasi', 'program_keahlian' => '902', 'code' => '1130', 'program_pendidikan' => '10'],
+    ['id' => '1131','no' => '9.2.3', 'jenis_sekolah' => '10', 'name' => 'Kriya Kreatif Keramik', 'program_keahlian' => '902', 'code' => '1131', 'program_pendidikan' => '10'],
+    ['id' => '1132','no' => '9.2.4', 'jenis_sekolah' => '10', 'name' => 'Kriya Kreatif Loga dan Perhiasan', 'program_keahlian' => '902', 'code' => '1132', 'program_pendidikan' => '10'],
+    ['id' => '1133','no' => '9.2.5', 'jenis_sekolah' => '10', 'name' => 'Kriya Kreatif Kayu dan Rotan', 'program_keahlian' => '902', 'code' => '1133', 'program_pendidikan' => '10'],
+	
+    ['id' => '1134','no' => '9.3.1', 'jenis_sekolah' => '10', 'name' => 'Seni Musik Klasik', 'program_keahlian' => '903', 'code' => '1134', 'program_pendidikan' => '10'],
+    ['id' => '1135','no' => '9.3.2', 'jenis_sekolah' => '10', 'name' => 'Seni Musik Populer', 'program_keahlian' => '903', 'code' => '1135', 'program_pendidikan' => '10'],
+
+    ['id' => '1136','no' => '9.4.1', 'jenis_sekolah' => '10', 'name' => 'Seni Tari', 'program_keahlian' => '904', 'code' => '1136', 'program_pendidikan' => '10'],
+    ['id' => '1137','no' => '9.4.2', 'jenis_sekolah' => '10', 'name' => 'Penataan Tari', 'program_keahlian' => '904', 'code' => '1137', 'program_pendidikan' => '10'],
+    ['id' => '1138','no' => '9.5.1', 'jenis_sekolah' => '10', 'name' => 'Seni Karawitan', 'program_keahlian' => '905', 'code' => '1138', 'program_pendidikan' => '10'],
+    ['id' => '1139','no' => '9.5.2', 'jenis_sekolah' => '10', 'name' => 'Penataan Karawitan', 'program_keahlian' => '905', 'code' => '1139', 'program_pendidikan' => '10'],
+
+    ['id' => '1140','no' => '9.6.1', 'jenis_sekolah' => '10', 'name' => 'Seni Pedalangan', 'program_keahlian' => '906', 'code' => '1140', 'program_pendidikan' => '10'],
+    
+	['id' => '1141','no' => '9.7.1', 'jenis_sekolah' => '10', 'name' => 'Pemeranan', 'program_keahlian' => '907', 'code' => '1141', 'program_pendidikan' => '10'],
+    ['id' => '1142','no' => '9.7.2', 'jenis_sekolah' => '10', 'name' => 'Tata Artistik Teater', 'program_keahlian' => '907', 'code' => '1142', 'program_pendidikan' => '10'],
+
+    ['id' => '1143','no' => '9.8.1', 'jenis_sekolah' => '10', 'name' => 'Produksi dan Siaran Radio', 'program_keahlian' => '908', 'code' => '1143', 'program_pendidikan' => '10'],
+    ['id' => '1144','no' => '9.8.2', 'jenis_sekolah' => '10', 'name' => 'Produksi dan Siaran Televisi', 'program_keahlian' => '908', 'code' => '1144', 'program_pendidikan' => '10'],
+    ['id' => '1145','no' => '9.8.3', 'jenis_sekolah' => '10', 'name' => 'Produksi Film dan Program Televisi', 'program_keahlian' => '908', 'code' => '1145', 'program_pendidikan' => '10'],
+    ['id' => '1146','no' => '9.8.4', 'jenis_sekolah' => '10', 'name' => 'Produksi Film', 'program_keahlian' => '908', 'code' => '1146', 'program_pendidikan' => '10'],
+    ['id' => '9999','no' => '9.9.9', 'jenis_sekolah' => '20', 'name' => 'SMA - Umum', 'program_keahlian' => '999', 'code' => '9999', 'program_pendidikan' => '10'],
+ ];
+  
+  foreach ($entries as $entry) {
+	$entry['user_id'] = '1'; 
+    $kompetensi_keahlian = KompetensiKeahlian::create($entry);
+	$kompetensi_keahlian->save();
+  }
+}

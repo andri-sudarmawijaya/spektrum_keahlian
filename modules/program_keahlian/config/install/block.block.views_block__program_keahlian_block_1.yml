@@ -1,0 +1,31 @@
+uuid: 12cdd503-d782-4d86-93c5-27b6866d8bf8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.program_keahlian
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__program_keahlian_block_1
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:program_keahlian-block_1'
+settings:
+  id: 'views_block:program_keahlian-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/bidang_keahlian/*'
+    negate: false
+    context_mapping: {  }

@@ -158,11 +158,11 @@ class KompetensiKeahlian extends ContentEntityBase implements KompetensiKeahlian
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 10,
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => 5,
+        'weight' => 10,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
@@ -184,11 +184,37 @@ class KompetensiKeahlian extends ContentEntityBase implements KompetensiKeahlian
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'hidden',
-        'weight' => -5,
+        'weight' => -10,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -5,
+        'weight' => -10,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE)
+      ->setRequired(TRUE);
+
+    $fields['jenis_sekolah'] = BaseFieldDefinition::create('entity_reference')
+      ->setLabel(t('Jenis sekolah'))
+      ->setDescription(t('The jenis_sekolah ID of the Kompetensi keahlian entity.'))
+      ->setRevisionable(TRUE)
+      ->setSetting('target_type', 'jenis_sekolah')
+      ->setSetting('handler', 'default')
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'entity_reference_label',
+        'weight' => -9,
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'entity_reference_autocomplete',
+        'weight' => -9,
+        'settings' => [
+          'match_operator' => 'CONTAINS',
+          'size' => '60',
+          'autocomplete_type' => 'tags',
+          'placeholder' => '',
+        ],
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -205,11 +231,11 @@ class KompetensiKeahlian extends ContentEntityBase implements KompetensiKeahlian
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -4,
+        'weight' => -8,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -4,
+        'weight' => -8,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -225,11 +251,11 @@ class KompetensiKeahlian extends ContentEntityBase implements KompetensiKeahlian
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'entity_reference_label',
-        'weight' => -3,
+        'weight' => -7,
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => -3,
+        'weight' => -7,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',
@@ -252,11 +278,11 @@ class KompetensiKeahlian extends ContentEntityBase implements KompetensiKeahlian
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'string',
-        'weight' => -2,
+        'weight' => -6,
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -2,
+        'weight' => -6,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE)
@@ -273,11 +299,11 @@ class KompetensiKeahlian extends ContentEntityBase implements KompetensiKeahlian
       ->setDisplayOptions('view', [
         'label' => 'above',
         'type' => 'entity_reference_label',
-        'weight' => -1,
+        'weight' => -5,
       ])
       ->setDisplayOptions('form', [
         'type' => 'entity_reference_autocomplete',
-        'weight' => -1,
+        'weight' => -5,
         'settings' => [
           'match_operator' => 'CONTAINS',
           'size' => '60',

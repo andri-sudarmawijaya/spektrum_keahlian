@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Creates some default entries on this module custom table.
+ *
+ * @see hook_install()
+ *
+ * @ingroup simulasi
+ */
+use Drupal\program_keahlian\Entity\ProgramKeahlian;
+
+function program_keahlian_install() {
+  // Insert some example data into our schema.
+
+  $entries = [
+	['id' => '101','no' => '1.1', 'name' => 'Teknologi Konstruksi dan Properti', 'bidang_keahlian' => '10'],
+	['id' => '102','no' => '1.2', 'name' => 'Teknik Geomatika dan Geospatial', 'bidang_keahlian' => '10'],
+	['id' => '103','no' => '1.3', 'name' => 'Teknik Ketenagalistrikan', 'bidang_keahlian' => '10'],
+	['id' => '104','no' => '1.4', 'name' => 'Teknik Mesin', 'bidang_keahlian' => '10'],
+	['id' => '105','no' => '1.5', 'name' => 'Teknologi Pesawat Udara', 'bidang_keahlian' => '10'],
+	['id' => '106','no' => '1.6', 'name' => 'Teknik Grafika', 'bidang_keahlian' => '10'],
+	['id' => '107','no' => '1.7', 'name' => 'Teknik Instrumentasi Industri', 'bidang_keahlian' => '10'],
+	['id' => '108','no' => '1.8', 'name' => 'Teknik Industri', 'bidang_keahlian' => '10'],
+	['id' => '109','no' => '1.9', 'name' => 'Teknologi Tekstil', 'bidang_keahlian' => '10'],
+	['id' => '110','no' => '1.10', 'name' => 'Teknik Kimia', 'bidang_keahlian' => '10'],
+	['id' => '111','no' => '1.11', 'name' => 'Teknik Otomotif', 'bidang_keahlian' => '10'],
+	['id' => '112','no' => '1.12', 'name' => 'Teknik Perkapalan', 'bidang_keahlian' => '10'],
+	['id' => '113','no' => '1.13', 'name' => 'Teknik Elektronika', 'bidang_keahlian' => '10'],
+	
+	['id' => '201','no' => '2.1', 'name' => 'Teknik Perminyakan', 'bidang_keahlian' => '20'],
+	['id' => '202','no' => '2.2', 'name' => 'Geologi Pertambangan', 'bidang_keahlian' => '20'],
+	['id' => '203','no' => '2.3', 'name' => 'Teknik Energi Terbarukan', 'bidang_keahlian' => '20'],
+	
+	['id' => '301','no' => '3.1', 'name' => 'Teknik Komputer dan Informatika', 'bidang_keahlian' => '30'],
+	['id' => '302','no' => '3.2', 'name' => 'Teknik Telekomunikasi', 'bidang_keahlian' => '30'],
+
+	['id' => '401','no' => '4.1', 'name' => 'Keperawatan', 'bidang_keahlian' => '40'],
+	['id' => '402','no' => '4.2', 'name' => 'Kesehatan Gigi', 'bidang_keahlian' => '40'],
+	['id' => '403','no' => '4.3', 'name' => 'Teknologi Laboratorium Medik', 'bidang_keahlian' => '40'],
+	['id' => '404','no' => '4.4', 'name' => 'Farmasi', 'bidang_keahlian' => '40'],
+	['id' => '405','no' => '4.5', 'name' => 'Pekerjaan Sosial', 'bidang_keahlian' => '40'],
+
+	['id' => '501','no' => '5.1', 'name' => 'Agibisnis Tanaman', 'bidang_keahlian' => '50'],
+	['id' => '502','no' => '5.2', 'name' => 'Agibisnis Ternak', 'bidang_keahlian' => '50'],
+	['id' => '503','no' => '5.3', 'name' => 'Kesehatan Hewan', 'bidang_keahlian' => '50'],
+	['id' => '504','no' => '5.4', 'name' => 'Agribisnis Pengolahan Hasil Pertanian', 'bidang_keahlian' => '50'],
+	['id' => '505','no' => '5.5', 'name' => 'Teknik Pertanian', 'bidang_keahlian' => '50'],
+	['id' => '506','no' => '5.6', 'name' => 'Kehutanan', 'bidang_keahlian' => '50'],
+
+	['id' => '601','no' => '6.1', 'name' => 'Pelayaran Kapal Penangkap Ikan', 'bidang_keahlian' => '60'],
+	['id' => '602','no' => '6.2', 'name' => 'Pelayaran Kapal Niaga', 'bidang_keahlian' => '60'],
+	['id' => '603','no' => '6.3', 'name' => 'Perikanan', 'bidang_keahlian' => '60'],
+	['id' => '604','no' => '6.4', 'name' => 'Pengolahan Hasil Perikanan', 'bidang_keahlian' => '60'],
+
+	['id' => '701','no' => '7.1', 'name' => 'Bisnis dan Pemasaran', 'bidang_keahlian' => '70'],
+	['id' => '702','no' => '7.2', 'name' => 'Manajemen Perkantoran', 'bidang_keahlian' => '70'],
+	['id' => '703','no' => '7.3', 'name' => 'Akuntansi dan Keuangan', 'bidang_keahlian' => '70'],
+	['id' => '704','no' => '7.4', 'name' => 'Logistik', 'bidang_keahlian' => '70'],
+
+	['id' => '801','no' => '8.1', 'name' => 'Perhotelan dan Jasa Pariwisata', 'bidang_keahlian' => '80'],
+	['id' => '802','no' => '8.2', 'name' => 'Kuliner', 'bidang_keahlian' => '80'],
+	['id' => '803','no' => '8.3', 'name' => 'Tata Kecantikan', 'bidang_keahlian' => '80'],
+	['id' => '804','no' => '8.4', 'name' => 'Tata Busana', 'bidang_keahlian' => '80'],
+
+	['id' => '901','no' => '9.1', 'name' => 'Seni Rupa', 'bidang_keahlian' => '90'],
+	['id' => '902','no' => '9.2', 'name' => 'Desain dan Produk Kreatif Kriya', 'bidang_keahlian' => '90'],
+	['id' => '903','no' => '9.3', 'name' => 'Seni Musik', 'bidang_keahlian' => '90'],
+	['id' => '904','no' => '9.4', 'name' => 'Seni Tari', 'bidang_keahlian' => '90'],
+	['id' => '905','no' => '9.5', 'name' => 'Seni Karawitan', 'bidang_keahlian' => '90'],
+	['id' => '906','no' => '9.6', 'name' => 'Seni Padalangan', 'bidang_keahlian' => '90'],
+	['id' => '907','no' => '9.7', 'name' => 'Seni Teater', 'bidang_keahlian' => '90'],
+	['id' => '908','no' => '9.8', 'name' => 'Seni Broadcasting dan Film', 'bidang_keahlian' => '90'],
+	['id' => '999','no' => '9.9', 'name' => 'SMA', 'bidang_keahlian' => '99'],
+  ];
+  
+  foreach ($entries as $entry) {
+	$entry['user_id'] = '1'; 
+    $program_keahlian = ProgramKeahlian::create($entry);
+	$program_keahlian->save();
+  }
+}
